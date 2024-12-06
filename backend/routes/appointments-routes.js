@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { bookAppointment } = require('../service/appointments-service');
+const { bookAppointment, getAllAppointments } = require('../service/appointments-service');
 
 router.post('/', async (req, res) => {
     const { name, date, time, service } = req.body;
@@ -16,6 +16,21 @@ router.post('/', async (req, res) => {
         });
     } catch (error) {
         res.status(500).send('Error creating appointment: ' + error.message);
+    }
+});
+
+router.get('/', async (req, res) => {
+    try {
+        const snapshot = await getAllAppointments();
+
+        const appointments = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        res.status(200).json(appointments);
+    } catch (error) {
+        res.status(500).send('Error fetching appointments: ' + error.message);
     }
 });
 

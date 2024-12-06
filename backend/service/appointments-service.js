@@ -1,7 +1,7 @@
 const moment = require('moment');
 const isWithinWorkingHours = require('../helpers/isWithinWorkingHours');
 const { getAppointments, addAppointment } = require('../db');
-const { where } = require('firebase/firestore');
+const { where, collection } = require('firebase/firestore');
 
 async function bookAppointment(name, date, time, service) {
     const appointmentDateTime = moment(`${date} ${time}`, "YYYY-MM-DD HH:mm");
@@ -51,6 +51,13 @@ async function bookAppointment(name, date, time, service) {
     };
 }
 
+async function getAllAppointments() {
+    const snapshot = await getAppointments();
+
+    return snapshot;
+}
+
 module.exports = {
-    bookAppointment
+    bookAppointment,
+    getAllAppointments
 };
