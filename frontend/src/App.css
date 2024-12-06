@@ -1,38 +1,229 @@
-.App {
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.landing-page {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.landing-header {
+  background-image: url(https://images.unsplash.com/photo-1514336937476-a5b961020a5c?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-header > .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 300px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.landing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.landing-header p {
+  font-size: 1.25rem;
+  margin-top: 0;
+  color: #f1f1f1;
+}
+
+.about-section,
+.services-section,
+.testimonials-section {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.about-section h3,
+.services-section h3,
+.testimonials-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #b19a33;
+}
+
+label {
+  display: block;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.about-section p,
+.services-section p,
+.testimonials-section p {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.service-item {
+  width: 30%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  color: #b19a33;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.booking-section {
+  margin-top: 40px;
+}
+
+.booking-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #b19a33;
+}
+
+.booking-section p {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.testimonial-item {
+  width: 30%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+  font-style: italic;
+  color: #333;
+}
+
+.testimonial-item p:last-child {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.booking-form {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form .btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="time"],
+.booking-form select {
+  background-color: #fafafa;
+}
+
+.booking-form .btn {
+  background-color: #b19a33;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form .btn:hover {
+  background-color: #867321;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.landing-footer {
+  margin-top: auto;
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+}
+
+.landing-footer p {
+  font-size: 1rem;
+}
+
+.service-item .img-cont {
+  width: 100%;
+  height: 220px;
+  background: white;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.service-item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 40px 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .services-list {
+    flex-direction: column;
+  }
+
+  .service-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .testimonials {
+    flex-direction: column;
+  }
+
+  .testimonial-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .booking-form {
+    padding: 20px;
   }
 }
