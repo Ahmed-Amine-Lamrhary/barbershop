@@ -27,7 +27,9 @@ const BookingForm = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:4000/appointments', {
+            const URL = 'https://barbershop-backend-rust.vercel.app';
+
+            const response = await fetch(`${URL}/appointments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
