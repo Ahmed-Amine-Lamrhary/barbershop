@@ -143,7 +143,7 @@ label {
 
 .booking-form input,
 .booking-form select,
-.booking-form .btn {
+.btn {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -158,15 +158,18 @@ label {
   background-color: #fafafa;
 }
 
-.booking-form .btn {
+.btn {
+  width: auto;
   background-color: #b19a33;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.booking-form .btn:hover {
+.btn:hover {
   background-color: #867321;
 }
 
@@ -226,4 +229,60 @@ label {
   .booking-form {
     padding: 20px;
   }
+}
+
+.appointment-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.appointments-header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3a3a3a;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointments-table th {
+  background-color: #6a5a3b; /* Luxurious yellow */
+  color: white;
+  font-family: 'Georgia', serif;
+}
+
+.appointments-table td {
+  background-color: #fff;
+}
+
+.appointments-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.appointments-table tr:hover td {
+  background-color: #f1e1b3; /* Light yellow on hover */
+}
+
+.appointments-table th {
+  font-size: 1rem;
+  color: white;
+}
+
+.appointments-table td {
+  font-size: 1rem;
+  color: black;
 }

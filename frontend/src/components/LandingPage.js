@@ -7,6 +7,11 @@ function LandingPage() {
         <div className='overlay'>
           <h1>Welcome to Our Barbershop</h1>
           <p>Where your next haircut is just a click away. Book an appointment today!</p>
+
+          <div style={{ marginTop: 30, display: "flex", justifyContent: "center" }}>
+            <a href='/appointments' style={{ marginRight: 10 }} className='btn'>See appointments</a>
+            <a href='#booking-section' className='btn'>Book Your Appointment</a>
+          </div>
         </div>
       </header>
 
@@ -43,7 +48,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="booking-section">
+      <section className="booking-section" id="booking-section">
         <h3>Book Your Appointment</h3>
         <p>Ready to book? Use our simple form below to schedule your next appointment. Choose your service, time, and date, and we'll see you at the shop!</p>
         <BookingForm />

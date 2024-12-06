@@ -13,15 +13,28 @@ function AppointmentList() {
   }, []);
 
   return (
-    <div>
-      <h1>Appointments</h1>
-      <ul>
-        {appointments.map((appointment) => (
-          <li key={appointment.id}>
-            {appointment.name} - {appointment.date} at {appointment.time} - {appointment.service}
-          </li>
-        ))}
-      </ul>
+    <div className="appointment-list-container">
+      <h1 className="appointments-header">Appointments</h1>
+      <table className="appointments-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Service</th>
+          </tr>
+        </thead>
+        <tbody>
+          {appointments.map((appointment) => (
+            <tr key={appointment.id}>
+              <td>{appointment.name}</td>
+              <td>{appointment.date}</td>
+              <td>{appointment.time}</td>
+              <td>{appointment.service}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
